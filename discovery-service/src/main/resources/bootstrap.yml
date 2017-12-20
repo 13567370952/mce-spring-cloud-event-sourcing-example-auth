@@ -1,0 +1,17 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-service
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false 
+    serviceUrl: 
+      defaultZone: http://${MCE_EUREKA_USER}:${MCE_EUREKA_PASSWORD}@${MCE_EUREKA_HOST}:${MCE_EUREKA_PORT}/eureka/
+security:
+  basic:
+    enabled: true
+  user:
+    name: ${MCE_EUREKA_USER}
+    password: ${MCE_EUREKA_PASSWORD}
